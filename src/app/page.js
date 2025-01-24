@@ -1,27 +1,26 @@
 import Link from "next/link";
 
-
-
-
 const Home = async () => {
-        const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-        const data = await res.json()
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const data = await res.json();
 
-
-        return (
-                <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Blog Titles</h1>
-      <ul className="list-disc pl-5">
+  return (
+    <div className="container mx-auto p-4 bg-gray-50 min-h-screen">
+      <h1 className="text-3xl font-extrabold text-center text-purple-600 mb-8">
+        Blog Titles
+      </h1>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {data.map((blog) => (
-          <li key={blog.id}>
-          
-
+          <div key={blog.id} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out">
             <Link href={`/blogs/${blog.id}`}>
-              <p className="text-blue-500 hover:underline">{blog.title}</p>
+              <p className="text-xl font-semibold text-purple-700 hover:text-fuchsia-600">
+                {blog.title}
+              </p>
             </Link>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

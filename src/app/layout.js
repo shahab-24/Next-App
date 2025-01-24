@@ -22,18 +22,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-      
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <div className="h-[8vh] max-w-6xl mx-auto">
-      <Navbar></Navbar>
-      </div>
-        <div className="max-w-6xl mx-auto min-h-[calc(100vh-68px)] mt-10">
-        {children}
+        <div className="w-full h-auto mx-auto mt-6 mb-10">
+          <Navbar />
         </div>
 
-        <div>
-                <Footer></Footer>
+        <div className="w-full max-w-6xl mx-auto min-h-[calc(100vh-68px)] my-10 px-4 sm:px-6 lg:px-8">
+          {children}
+        </div>
+
+        <div className="w-full mt-4">
+          <Footer />
         </div>
       </body>
     </html>
