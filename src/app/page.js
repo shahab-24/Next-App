@@ -1,5 +1,7 @@
+
+
 import Link from "next/link";
-import ClientLoginButton from "../components/ClientLoginButton";
+
 
 const Home = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -11,8 +13,7 @@ const Home = async () => {
         Blog Titles
       </h1>
 
-      {/* Client Login Button */}
-      <ClientLoginButton />
+      
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {data.map((blog) => (
