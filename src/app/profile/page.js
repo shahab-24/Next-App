@@ -12,7 +12,7 @@ const page = async () => {
 
   return (
     <div className="bg-gray-100 min-h-screen p-6 md:p-10">
-      {isAuthenticated() ? (
+      {(isAuthenticated()) ? (
         <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
           <h2 className="text-3xl lg:text-4xl font-semibold text-gray-800 text-center mb-4">
             Welcome to Your Profile, Mr.{" "}
